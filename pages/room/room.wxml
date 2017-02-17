@@ -1,0 +1,13 @@
+<import src="../../wxParse/wxParse.wxml"/>
+<!--room.wxml-->
+
+<!--Message Input -->
+<view class="msg-input">
+  <textarea bindinput="bindKeyInput" auto-height placeholder="输入..." value="{{inputValue}}" />
+  <button type="default" size="mini" bindtap="sendBtn"> Send </button>
+</view>
+<!--Message Content -->
+<scroll-view class="msg-content" scroll-y="true" scroll-top="{{scrollTop}}" style="height: {{boxHeihgt}}px;">
+  <template is="wxParse" data="{{wxParseData:messages.nodes}}"/>
+</scroll-view>
+
